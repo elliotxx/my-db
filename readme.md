@@ -11,3 +11,15 @@ mongo 的数据文件需要命令恢复
 在 my-db/redis/ 目录中运行 start-redis.sh 启动 redis  
 在 my-db/mongodb/ 目录中运行 start-mongod.sh 启动 mongodb
 
+#### 参考资料
+mongodb 3.4.5安装及安全配置  
+https://my.oschina.net/u/2404183/blog/994005
+
+Install MongoDB Community Edition on Ubuntu（官方文档）  
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
+Mongodb 启动报错:"/sys/kernel/mm/transparent_hugepage/enabled is 'always'"  
+http://blog.csdn.net/u013075468/article/details/51471033
+
+线上环境部署MongoDB的官方建议  
+http://www.cnblogs.com/ywcz060/p/5551776.html
