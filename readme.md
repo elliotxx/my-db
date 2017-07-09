@@ -1,6 +1,8 @@
 #### 使用要求
 * redis：要求系统已安装好 redis 到默认路径
-* mongo：要求将 mongodb 的命令都放到 my-db/mongodb/bin 目录下
+* mongo：要求将 mongodb 的命令都放到 my-db/mongodb/bin 目录下  
+mongodb 3.4.6 ubuntu 64bit 版本下载命令：  
+```wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz```
 
 #### 使用方法
 * 数据文件的放置  
