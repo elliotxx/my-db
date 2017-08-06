@@ -26,14 +26,25 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
     * 在 my-db/redis/ 目录中运行 start-redis.sh 启动 redis  
     * 在 my-db/mongodb/ 目录中运行 start-mongod.sh 启动 mongodb  
 mongodb 设置用户名和密码：[MongoDB如何设置权限（类似关系型数据库的用户名和密码）](http://www.cnblogs.com/itxiongwei/p/5520863.html)  
-1.使用 mongod 启动服务时开启权限认证  
+        1. 使用 mongod 启动服务时开启权限认证  
 ```mongod --dbpath ./db1 --port 20000 --auth    # 加上 --auth 或者在配置文件中加入 auth = true```  
-2.设置管理员权限  
+        2. 创建管理员权限用户  
 ```use admin```  
-```db.createUser({user:"root",pwd:"root123",roles:["userAdminAnyDatabase"]})```  
-3.以该用户的身份登录  
+```db.createUser({user:"root",pwd:"root123",roles:["userAdminAnyDatabase"]})```
+        3. 登录管理员用户  
 ```use admin```  
 ```db.auth("root","root123")    # 返回 1 表示登陆成功```
+        4. 创建普通用户  
+```use admin	# 选择普通用户的认证服务器```  
+```db.createUser(```    
+```{```  
+```	user:'guest',```  
+```	pwd:'guest123',```  
+```	roles:[{role:'readWrite',db:'test'}]	# 该用户 guest 对 test 数据库有 readWrite 权限```  
+```}```  
+```)```
+        5. 普通用户远程连接  
+        ```mongo --host 127.0.0.1 --port 27017 -u "guest" -p "guest123" --authenticationDatabase "admin"```
 
 #### 参考资料
 mongodb 3.4.5安装及安全配置  
@@ -47,4 +58,10 @@ http://blog.csdn.net/u013075468/article/details/51471033
 
 线上环境部署MongoDB的官方建议  
 http://www.cnblogs.com/ywcz060/p/5551776.html
+
+Enable Auth（官方文档，开启权限认证，创建管理员用户，远程登录）  
+https://docs.mongodb.com/manual/tutorial/enable-authentication/
+
+Manage Users and Roles（官方文档，修改用户角色，修改用户密码，查看用户角色，查看角色权限）  
+https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
 
