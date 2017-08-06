@@ -50,6 +50,8 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
         1. 修改 redis.conf
         2. 将 ```#requirepass foobared``` 注释去掉，改为你的访问密码：```requirepass myPassword```
         3. 重启 Redis   
+        4. 远程连接
+            ```redis-cli -h 127.0.0.1 -p 6379 -a myPassword```
 
 #### 参考资料
 mongodb 3.4.5安装及安全配置  
