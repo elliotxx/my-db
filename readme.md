@@ -65,3 +65,5 @@ https://docs.mongodb.com/manual/tutorial/enable-authentication/
 Manage Users and Roles（官方文档，修改用户角色，修改用户密码，查看用户角色，查看角色权限）  
 https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
 
+Python Driver (PyMongo)（官方文档，pymongo）  
+https://docs.mongodb.com/getting-started/python/client/
