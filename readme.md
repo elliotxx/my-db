@@ -25,7 +25,8 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 * 数据库的启动  
     * 在 my-db/redis/ 目录中运行 start-redis.sh 启动 redis  
     * 在 my-db/mongodb/ 目录中运行 start-mongod.sh 启动 mongodb  
-mongodb 设置用户名和密码：[MongoDB如何设置权限（类似关系型数据库的用户名和密码）](http://www.cnblogs.com/itxiongwei/p/5520863.html)  
+* 开启数据库权限认证
+    * mongodb 设置用户名和密码：[MongoDB如何设置权限（类似关系型数据库的用户名和密码）](http://www.cnblogs.com/itxiongwei/p/5520863.html)  
         1. 使用 mongod 启动服务时开启权限认证  
 ```mongod --dbpath ./db1 --port 20000 --auth    # 加上 --auth 或者在配置文件中加入 auth = true```  
         2. 创建管理员权限用户  
@@ -45,6 +46,10 @@ mongodb 设置用户名和密码：[MongoDB如何设置权限（类似关系型�
 ```)```
         5. 普通用户远程连接  
         ```mongo --host 127.0.0.1 --port 27017 -u "guest" -p "guest123" --authenticationDatabase "admin"```
+    * redis 设置访问密码
+        1. 修改 redis.conf
+        2. 将 ```#requirepass foobared``` 注释去掉，改为你的访问密码：```requirepass myPassword```
+        3. 重启 Redis   
 
 #### 参考资料
 mongodb 3.4.5安装及安全配置  
@@ -67,3 +72,6 @@ https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
 
 Python Driver (PyMongo)（官方文档，pymongo）  
 https://docs.mongodb.com/getting-started/python/client/
+
+redis配置认证密码  
+http://blog.csdn.net/zyz511919766/article/details/42268219
