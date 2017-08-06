@@ -64,14 +64,22 @@ http://blog.csdn.net/u013075468/article/details/51471033
 线上环境部署MongoDB的官方建议  
 http://www.cnblogs.com/ywcz060/p/5551776.html
 
-Enable Auth（官方文档，开启权限认证，创建管理员用户，远程登录）  
+Enable Auth（MongoDB 官方文档，开启权限认证，创建管理员用户，远程登录）  
 https://docs.mongodb.com/manual/tutorial/enable-authentication/
 
-Manage Users and Roles（官方文档，修改用户角色，修改用户密码，查看用户角色，查看角色权限）  
+Manage Users and Roles（MongoDB 官方文档，修改用户角色，修改用户密码，查看用户角色，查看角色权限）  
 https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
 
-Python Driver (PyMongo)（官方文档，pymongo）  
+Python Driver (PyMongo)（MongoDB 官方文档，pymongo）  
 https://docs.mongodb.com/getting-started/python/client/
+
+Redis Quick Start（Redis 官方文档）  
+https://redis.io/topics/quickstart
 
 redis配置认证密码  
 http://blog.csdn.net/zyz511919766/article/details/42268219
+
+Python操作redis（使用密码连接Redis）  
+http://blog.csdn.net/pi9nc/article/details/17358757
+
+
