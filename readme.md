@@ -84,4 +84,5 @@ http://blog.csdn.net/zyz511919766/article/details/42268219
 Python操作redis（使用密码连接Redis）  
 http://blog.csdn.net/pi9nc/article/details/17358757
 
-
+Redis 命令查询（Redis 官方文档）  
+https://redis.io/commands
