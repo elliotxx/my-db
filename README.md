@@ -46,13 +46,22 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```)```
         5. 普通用户远程连接  
         ```mongo --host 127.0.0.1 --port 27017 -u "guest" -p "guest123" --authenticationDatabase "admin"```
+        6. 赋予用户角色  
+        ```use admin```  
+        ```db.grantRolesToUser( 'your_user', [ {role:'readWrite',db:'your_db'} ] )```
+        7. 剥夺用户角色  
+        ```use admin```  
+        ```db.revokeRolesFromUser( 'your_user',[ {role:'readWrite',db:'your_db'} ] )```
+        8. 删除用户  
+        ```use admin```  
+        ```db.dropUser('your_user')```
     * redis 设置访问密码
         1. 修改 redis.conf
         2. 将 ```#requirepass foobared``` 注释去掉，改为你的访问密码：```requirepass myPassword```
         3. 重启 Redis   
         4. 远程连接
             ```redis-cli -h 127.0.0.1 -p 6379 -a myPassword```
-
+            
 #### 参考资料
 mongodb 3.4.5安装及安全配置  
 https://my.oschina.net/u/2404183/blog/994005
