@@ -31,7 +31,7 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```mongod --dbpath ./db1 --port 20000 --auth    # 加上 --auth 或者在配置文件中加入 auth = true```  
         2. 创建管理员权限用户  
 ```use admin```  
-```db.createUser({user:"root",pwd:"root123",roles:["userAdminAnyDatabase"]})```
+```db.createUser({user:"admin",pwd:"admin123",roles:["userAdminAnyDatabase"]})```
         3. 登录管理员用户  
 ```use admin```  
 ```db.auth("root","root123")    # 返回 1 表示登陆成功```
