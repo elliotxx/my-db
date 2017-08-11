@@ -34,7 +34,7 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```db.createUser({user:"admin",pwd:"admin123",roles:["userAdminAnyDatabase"]})```
         3. 登录管理员用户  
 ```use admin```  
-```db.auth("root","root123")    # 返回 1 表示登陆成功```
+```db.auth("admin","admin123")    # 返回 1 表示登陆成功```
         4. 创建普通用户  
 ```use admin	# 选择普通用户的认证服务器```  
 ```db.createUser(```    
