@@ -84,7 +84,7 @@ https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/
 Python Driver (PyMongo)（MongoDB 官方文档，pymongo）  
 https://docs.mongodb.com/getting-started/python/client/
 
-PyMongo 权限验证的例子（Authentication Examples）
+PyMongo 权限验证的例子（Authentication Examples）  
 http://api.mongodb.com/python/current/examples/authentication.html
 
 Redis Quick Start（Redis 官方文档）  
