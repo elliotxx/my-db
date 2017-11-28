@@ -36,12 +36,12 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```use admin```  
 ```db.auth("admin","admin123")    # 返回 1 表示登陆成功```
         4. 创建普通用户  
-```use admin	# 选择普通用户的认证服务器```  
+```use test	# 选择认证数据库```  
 ```db.createUser(```    
 ```{```  
-```	user:'guest',```  
-```	pwd:'guest123',```  
-```	roles:[{role:'readWrite',db:'test'}]	# 该用户 guest 对 test 数据库有 readWrite 权限```  
+```	user:'admin',```  
+```	pwd:'admin123',```  
+```	roles:[{role:'readWrite',db:'test'}]	# 赋予用户 admin 对 test 数据库的 readWrite 权限```  
 ```}```  
 ```)```
         5. 普通用户远程连接  
