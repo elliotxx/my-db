@@ -1,1 +1,3 @@
 mongodb/bin
+mongodb/data
+mongodb/log
