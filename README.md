@@ -1,4 +1,4 @@
-#### 使用要求
+## 使用要求
 * redis：要求系统已安装好 redis 到默认路径  
 redis 4.0.1 安装：
 
@@ -17,7 +17,7 @@ tar zxvf mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz
 cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```
 
-#### 使用方法
+## 使用方法
 * 数据文件的放置  
     * redis 的数据文件 dump.rdb 文件放到 my-db/redis/ 目录下，便可直接使用  
     * mongo 的数据文件需要命令恢复
@@ -62,7 +62,24 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
         4. 远程连接
             ```redis-cli -h 127.0.0.1 -p 6379 -a myPassword```
             
-#### 参考资料
+## 其它命令
+* windows 备份 mongodb 数据到本地
+```
+mongodump -h localhost -d zhihu_crawler -o d:\temp
+```
+
+* windows 恢复本地 mongodb 数据到远程主机
+```
+mongorestore.exe -h 60.205.212.2:27017 -d zhihu_crawler -directoryperdb d:\temp\zhihu_crawler
+```
+
+* mongodb 修改数据库名称
+```
+use admin;
+db.runCommand({renameCollection: "irectoryperdb.peoples", to: "zhihu_crawler.peoples"});
+```         
+
+## 参考资料
 mongodb 3.4.5安装及安全配置  
 https://my.oschina.net/u/2404183/blog/994005
 
