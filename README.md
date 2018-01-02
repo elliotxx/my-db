@@ -63,14 +63,22 @@ cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
             ```redis-cli -h 127.0.0.1 -p 6379 -a myPassword```
             
 ## 其它命令
-* windows 备份 mongodb 数据到本地
+* 备份 mongodb 数据到本地
 ```
 mongodump -h localhost -d zhihu_crawler -o d:\temp
 ```
+或者（认证数据库）
+```
+./mongodump -h localhost -u admin -p admin123 -d heatbox -o ../
+```
 
-* windows 恢复本地 mongodb 数据到远程主机
+* 恢复本地 mongodb 数据到远程主机
 ```
 mongorestore.exe -h 60.205.212.2:27017 -d zhihu_crawler -directoryperdb d:\temp\zhihu_crawler
+```
+或者（drop表示清除数据库之后在恢复）
+```
+./mongorestore -h 39.106.10.31 --port 27017 -u admin -p admin123 -d iHealth --drop ../iHealth
 ```
 
 * mongodb 修改数据库名称
