@@ -17,6 +17,13 @@ tar zxvf mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz
 cp -R mongodb-linux-x86_64-ubuntu1604-3.4.6/bin/ my-db/mongodb/
 ```
 
+## 用 Docker 启动
+### 用 Docker 启动 mongo
+启动 mongo 3.4 容器，并磁盘映射到 ~/mongodb/data 和 ~/mongodb/backup，并启动 auth 权限认证
+```
+docker run --name mongo -p 27017:27017 -v ~/mongodb/data:/data/db -v ~/mongodb/backup:/data/backup -d mongo:3.4 --auth
+```
+
 ## 使用方法
 * 数据文件的放置  
     * redis 的数据文件 dump.rdb 文件放到 my-db/redis/ 目录下，便可直接使用  
